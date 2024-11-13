@@ -1,3 +1,4 @@
+// User written struct definition files
 import type { struct_definition } from "../ffi_struct";
 
 let pcap_if_t = [
@@ -30,7 +31,7 @@ let pcap_pkthdr_def = [
             {
                 field_name: "tv_sec",
                 type: "int32",
-                size: 8
+                size: 4
             },
             {
                 field_name: "tv_usec",

@@ -85,7 +85,7 @@ export function ptr_to_data_view(pointer:number, size: number){
  * 
  * @param addr Pointer (address) where the struct starts
  * @param def Struct definition 
- * @returns Struct
+ * @returns Struct as JS object
  */
 export function read_value<T extends struct_definition>(addr: number|bigint, def: T):{
     result: StructReadResult<T>,
@@ -99,7 +99,7 @@ export function read_value<T extends struct_definition>(addr: number|bigint, def
     let data_view  = ptr_to_data_view(address, total_size)
     let obj = {} as any;
     let offset = 0;
-    // console.log(data_view)
+
     for(let field of def){
 
         if(field.type == "PADDING"){
@@ -144,7 +144,6 @@ export function write_value<T extends StructReadResult<U>,U extends struct_defin
     let offset = 0;
 
     if(addr.byteLength < total_size){
-        //uh oh!
         throw new Error("not enough space to write type!");
     }
     

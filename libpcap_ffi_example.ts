@@ -1,4 +1,4 @@
-// simple libpcap usage.
+// example libpcap usage to list all devices 
 import type {Pointer} from "bun:ffi";
 
 import { ptr_to_data_view, read_value, type StructReadResult }from "./ffi/ffi_struct"

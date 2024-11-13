@@ -86,7 +86,6 @@ let functions = dlopen(
 
 console.log("loaded libpcap")
 
-
 function getStructDefs(plat?:NodeJS.Platform){
     const platform = plat || os.platform()
 

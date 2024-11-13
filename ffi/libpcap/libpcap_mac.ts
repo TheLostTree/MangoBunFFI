@@ -1,3 +1,4 @@
+// User written struct definition files
 import type { struct_definition } from "../ffi_struct";
 
 let pcap_if_t = [
