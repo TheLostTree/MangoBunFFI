@@ -16,16 +16,18 @@ Each struct field is defined as such:
     size: number // size in bytes. If alignment is required, use PADDING fields.
 }
 ```
+**Important note: Make sure to define a your struct definition with ``as const satisfies struct_definition`` at the end otherwise typechecking will not work.** 
 
 ## Number types
 
 The number types are those supported by the DataView#get and DataView#set functions, but uncapitalized.
 
+# Importing
+
+Install this package with `` bun install https://github.com/TheLostTree/MangoBunFFI.git``
+ and import it with ``import {read_value} from "MangoBunFFI"`` 
 
 
-
-** Important note: Make sure to define a your struct definition as
-``as const satisfies struct_definition`` otherwise the typechecking will not work. ** 
 
 
 # Features
@@ -38,6 +40,11 @@ This is also the result of the read_value() function.
 the write_value() function (which i have yet to test unfortunately) will also feature the same typechecking if you pass in the struct definition into the method arguments.
 
 
+
+# Usage
+See the libpcap_ffi_example script for an example of usage.
+
+Structs are defined in ffi/libpcap/libpcap_${platform}.
 
 
 
